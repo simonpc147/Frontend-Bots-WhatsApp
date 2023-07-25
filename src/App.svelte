@@ -1,16 +1,36 @@
   <script>
-// @ts-nocheck
-
+      // @ts-nocheck
   
     function sidebarActive() {
       document.querySelector(".sb-nav-fixed").classList.toggle("sb-sidenav-toggled")
     }
 
+    function activeModal() {
+      document.querySelector(".modal_vist").classList.toggle("active")
+    }
+
+    function activeModalTwo() {
+      document.querySelector(".modal_vist_two").classList.toggle("active")
+    }
+
+    function activeModalThree() {
+      document.querySelector(".modal_vist_three").classList.toggle("active")
+    }
+
+    function activeModalFour() {
+      document.querySelector(".modal_vist_four").classList.toggle("active")
+    }
+
+    function activeModalFive() {
+      document.querySelector(".modal_vist_five").classList.toggle("active")
+    }
+
+    function activeModalSix() {
+      document.querySelector(".modal_vist_six").classList.toggle("active")
+    }
+
     function darking() {
-
-    let button = document.querySelector("#darking");
     let buttons = document.querySelector("#dark");
-
     let titles = document.querySelectorAll("#barra-titulo, #sidenavAccordion, #whatsapp-One, #conexiones-One, #contactos-One, #respuesta-One, #soporte-One, #equipo-One, #chatbots-One, #campaña-One, #informes-One, #configuracion-One, #wps, #notificacion, #mensaje, #icon, #cuenta2");
     let secciones = document.querySelectorAll(".text-h5, .container-seccion, .container-one, .title-active, .two, .subtitle, .buscador2, .jss103, .jss104, .container-two, .title-seccion, .MuiTableCell-head, .multitablet, .container-prymary, .parrafo, .buscador3")
 
@@ -30,16 +50,11 @@
     for (let i = 0; i<secciones.length; i++ ){
         secciones[i].classList.toggle("active");
     }
-}
+};
 
     let active = 0;
     let activacion = 1;
     let activaciones = 1;
-
-        
-
-
-
 
   </script>
 
@@ -125,7 +140,7 @@
                                   Contactos
                               </a>
                               <a class="nav-link" on:click={()=> active = 5} id="respuesta-One" data-target="#documentos" href="#a">
-                                  <div class="sb-nav-link-icon"><i class="bi bi-card-text"></i></div>
+                                  <div class="sb-nav-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
                                   Documentos
                               </a>
                               <a class="nav-link" on:click={()=> active = 4} id="respuesta-One" data-target="#respuesta" href="#a">
@@ -148,7 +163,7 @@
                                  Chatbots
                               </a>
                               <a class="nav-link" on:click={()=> active = 8} id="campaña-One" data-target="#campaña" href="#a">
-                                  <div class="sb-nav-link-icon"><i class="bi bi-person-fill-gear"></i></div>
+                                  <div class="sb-nav-link-icon"><i class="bi bi-megaphone-fill"></i></div>
                                  Campaña
                               </a>
                               <!-- <a class="nav-link"  data-target="#suscripcion" href="#">
@@ -156,17 +171,16 @@
                                  Suscripción
                               </a> -->
                               <a class="nav-link" on:click={()=> active = 9} id="informes-One" data-target="#informes" href="#a">
-                                  <div class="sb-nav-link-icon"><i class="bi bi-person-fill-gear"></i></div>
+                                  <div class="sb-nav-link-icon"><i class="bi bi-clipboard-data"></i></div>
                                  Informes
                               </a>
                               <a class="nav-link" on:click={()=> active = 10} id="configuracion-One" data-target="#configuracion" href="#a">
                                   <div class="sb-nav-link-icon"><i class="bi bi-person-fill-gear"></i></div>
                                  Configuración
                               </a>
-                              <!-- <a class="nav-link footer-vacio" >
+                              <a class="footer-vacio" href="#a">
                                 <div class="sb-nav-link-icon"></div>
-                              </a> -->
-  
+                              </a>
                           </div>
                       </div>
                   </nav>
@@ -174,9 +188,7 @@
   <!--  F I N  B A R R A  L A T E R A L -->
   
   
-              <div id="layoutSidenav_content">
-  
-  
+        <div id="layoutSidenav_content">
   <!-- Whatsapp -->
                   <div class="container-fluid px-4 {active === 0 ? 'active' : ''}" data-content id="whatsapp">
                       <main>
@@ -293,7 +305,7 @@
                                           <button class="container-prymary">
                                               <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#a" role="button" data-bs-toggle="dropdown" aria-expanded="false">AGREGAR </a>
                                               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                  <li><a class="dropdown-item" href="#!"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                                                  <li><a class="dropdown-item" on:click={activeModal} href="#!"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
                                                   <!-- <li><a class="dropdown-item" href="#!"><i class="bi bi-facebook"></i> Facebook</a></li>
                                                   <li><a class="dropdown-item" href="#!"><i class="bi bi-instagram"></i> Instagram</a></li> -->
                                               </ul>
@@ -326,12 +338,26 @@
                                           </tbody>
                                       </table>
                                   </div>
-                                  <div id="qr-code">Hola</div>
+
+                                  <section class="modal_vist">
+                                    <div class="modal_container">
+                                        <div class="modal_container_one">
+                                            <h1>Usa WhatsApp en tu computadora 
+                                                <i class="bi bi-phone-vibrate"></i>
+                                            </h1>
+                                            <img class="modal_container_img" src="src\assets\codigo-qr-remov.png" alt="">
+                                        </div>
+                                        <div class="modal_container_two">
+                                            <img class="modal_container_img_two" src="src\assets\simple_qrcode.png" alt="">
+                                            <button on:click={activeModal}>Conectado</button>
+                                        </div>
+                                    </div>
+                                  </section>
+
                               </div>
                            </div>
                       </div>
                   </div>
-  
   
    <!-- Contacto -->
           <div class="container-fluid px-4 {active === 2 ? 'active' : ''}" data-content id="contactos">
@@ -371,10 +397,10 @@
                                   </div>
                                   <div class="jss1009" >
                                       <button class="container-prymary button">
-                                          <a class="nav-link" href="#a">AGREGAR CONTACTO</a>
+                                          <a class="nav-link" on:click={activeModalTwo} href="#a">AGREGAR CONTACTO</a>
                                       </button>
-                                      <button class="container-prymary button2">
-                                          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#a" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                                      <button class="container-prymary button2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#a" ></a>
                                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                               <li><a class="dropdown-item" href="#!"><i class="bi bi-arrow-bar-up"></i> Importar XLSX</a></li>
                                               <li><a class="dropdown-item" href="#!"><i class="bi bi-arrow-bar-down"></i> Exportar</a></li>
@@ -409,8 +435,50 @@
                           </div>
                       </div>
                     </div>
+
+                    <section class="modal_vist_two">
+                        <div class="modal_container">
+                            <div class="modal_container_one">
+                                <div role="dialog">
+                                    <h2>Agregar contacto</h2>
+                                    <form action="#">
+                                      <div>
+                                        <h6>Detalles del contacto</h6>
+                                        <div>
+                                          <label>Nombre</label>
+                                          <div>
+                                            <input name="name" type="text" value="">
+                                            <p>Campo obligatorio</p>
+                                          </div>
+                                          <label>Número de Whatsapp</label>
+                                          <div>
+                                            <input name="number" placeholder="+1 23456789" type="text" value="">
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <label>Tratamiento</label>
+                                          <div>
+                                            <input name="treatmentName" type="text" value="">
+                                          </div>
+                                          <label>Correo Electrónico</label>
+                                          <div>
+                                            <input name="email" type="text" value="">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div>
+                                      <button type="button">Cancelar</button>
+                                      <button on:click={activeModalTwo} type="submit">Guardar</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                            </div>
+                        </div>
+                      </section>
+
                   </div>
               </div>
+
    <!-- Respuestas... -->
           <div class="container-fluid px-4 {active === 4 ? 'active' : ''}" data-content id="respuesta">
               <div class="panel-seccion">
@@ -465,7 +533,7 @@
                                   </div>
                                   <div class="jss1009" >
                                        <button class="container-prymary">
-                                      <a class="nav-link" id="navbarDropdown" href="#a" >AÑADIR RESPUESTA RÁPIDA </a>
+                                      <a class="nav-link" on:click={activeModalThree} id="navbarDropdown" href="#a" >AÑADIR RESPUESTA RÁPIDA </a>
                                   </button>
                                   </div>
                               </div>
@@ -492,6 +560,49 @@
                           </div>
                       </div>
                    </div>
+
+                   <section class="modal_vist_three">
+                    <div class="modal_container">
+                        <div class="modal_container_one">
+                            <div role="dialog">
+                                <h2>Añadir respuesta rápida</h2>
+                                <form>
+                                  <div>
+                                    <label>Atajo</label>
+                                    <input name="shortcut" type="text" required>
+                                    <p>Campo obligatorio</p>
+                                  </div>
+                                  <div>
+                                    <label>Mensaje</label>
+                                    <textarea name="message" rows="5"></textarea>
+                                    <input id="media-upload-button" type="file" style="display: none;">
+                                    <label for="media-upload-button" title="Agregar archivo" style="cursor: pointer;">
+                                      <span>
+                                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                                          <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"></path>
+                                        </svg>
+                                      </span>
+                                    </label>
+                                    <p>Debe contener un archivo o texto</p>
+                                  </div>
+                                  <div>
+                                    <label>Departamentos</label>
+                                    <select>
+                                      <option value="">Seleccione un departamento</option>
+                                      <option value="1">Departamento 1</option>
+                                      <option value="2">Departamento 2</option>
+                                    </select>
+                                  </div>
+                                  <div>
+                                  <button type="button">Cancelar</button>
+                                  <button on:click={activeModalThree} type="submit">Guardar</button>
+                                  </div>
+                                </form>
+                              </div>
+                        </div>
+                    </div>
+                  </section>
+
               </div>
           </div>
   
@@ -596,7 +707,7 @@
                                   </div>
                                   <div class="jss1009"  style="padding-left: 10px ;">
                                        <button class="container-prymary">
-                                      <a class="nav-link" id="navbarDropdown" href="#a" >AGREGAR USUARIO </a>
+                                      <a class="nav-link" on:click={activeModalFour} id="navbarDropdown" href="#a" >AGREGAR USUARIO </a>
                                   </button>
                                       <form action="">
   
@@ -628,6 +739,41 @@
                           </div>
                       </div>
                    </div>
+
+                <section class="modal_vist_four">
+                <div class="modal_container">
+                    <div class="modal_container_one">
+                    <div>
+                        <h2>Agregar usuario</h2>
+                        <form>
+                          <label> Nombre: </label>
+                          <input type="text" name="name"><br>
+                          <label> Contraseña: </label>
+                          <input type="password" name="password"><br>
+                          <label> Correo Electrónico: </label>
+                          <input type="text" name="email"><br>
+                          <label> Perfil: </label>
+                          <select name="profile">
+                            <option value="user">User</option>
+                          </select><br>
+                          <div>
+                            <label>Departamentos</label>
+                            <select>
+                              <option value="">Seleccione un departamento</option>
+                              <option value="1">Departamento 1</option>
+                              <option value="2">Departamento 2</option>
+                            </select>
+                          </div>
+                          <div>
+                          <button type="button">Cancelar</button>
+                          <button on:click={activeModalFour} type="submit">Guardar</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                </div> 
+            </section>
+
               </div>
           </div>
   
@@ -641,7 +787,7 @@
                               <div class="jss1009">
                                   <div class="jss1009"  style="padding-left: 10px ;">
                                           <button class="container-prymary">
-                                      <a class="nav-link" id="navbarDropdown" href="#a" >AGREGAR DEPARTAMENTO </a>
+                                      <a class="nav-link" on:click={activeModalFive}  id="navbarDropdown" href="#a" >AGREGAR DEPARTAMENTO </a>
                                   </button>
                                       <form action="">
   
@@ -673,6 +819,51 @@
                           </div>
                       </div>
                    </div>
+
+                   <section class="modal_vist_five">
+                    <div class="modal_container">
+                        <div class="modal_container_one">
+                            <div role="dialog">
+                                <div id="form-dialog-title">
+                                  <h2>Agregar departamento</h2>
+                                </div>
+                                <form action="#">
+                                  <div>
+                                    <label>Nombre</label>
+                                    <input name="name" type="text" value="">
+                                  </div>
+                                  <div>
+                                    <label>Color</label>
+                                    <input id="color" name="color" type="text" value="">
+                                  </div>
+                                  <div>
+                                    <label>Mensaje de saludo del departamento</label>
+                                    <textarea name="greetingMessage" rows="5"></textarea>
+                                  </div>
+                                  <div>
+                                    <label>Variables disponibles</label>
+                                  </div>
+                                  <h6>Opciones</h6>
+                                  <div>
+                                    <div>Agregar opción</div>
+                                  </div>
+                                  <div>
+                                    <p>Habilitar asignación automática</p>
+                                  </div>
+                                  <div>
+                                    <p>Asignar a usuarios fuera de línea</p>
+                                  </div>
+                                  <div>Tabla de usuarios del departamento</div>
+                                  <div>
+                                    <button type="button">Cancelar</button>
+                                    <button on:click={activeModalFive} type="submit">Añadir</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                </section>
+
                </div>
           </div>
   
@@ -727,7 +918,7 @@
                                   </div>
                                   <div class="jss1009" >
                                        <button class="container-prymary">
-                                      <a class="nav-link" id="navbarDropdown" href="#a" >AÑADIR RESPUESTA RÁPIDA </a>
+                                      <a class="nav-link" on:click={activeModalSix} id="navbarDropdown" href="#a" >AÑADIR RESPUESTA RÁPIDA </a>
                                   </button>
                                   </div>
                               </div>
@@ -753,13 +944,40 @@
                           </div>
                       </div>
                    </div>
+
+                   <section class="modal_vist_six">
+                    <div class="modal_container">
+                        <div class="modal_container_one">
+                            <div role="dialog">
+                                <div>
+                                <h2>Nueva campaña</h2>
+                                    <form>
+                                    <label>Nombre</label>
+                                    <input name="name" type="text">
+                                    <label>
+                                       <input type="checkbox" name="fastMode"> Modo rápido
+                                    </label>
+                                    <label>Seleccione una conexión*</label>
+                                    <select></select>
+                                    <label>Mensaje estándar</label>
+                                    <textarea name="globalBody" rows="5"></textarea>
+                                    <label>Variables disponibles</label>
+                                    <input type="text" disabled>
+                                    <label>Importar archivo XLSX</label>
+                                    <button>Descarga el archivo de muestra</button>
+                                    <div>
+                                        <button type="button">Cancelar</button>
+                                        <button on:click={activeModalSix} type="submit">Añadir</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                            </div>
+                        </div>
+                    </div> 
+                </section>
+
               </div>
           </div>
-   <!-- Suscripcion -->
-                   <!-- <div class="container-fluid px-4" data-content id="suscripcion">
-                      <h1 class="mt-4">Suscripción</h1>
-                      <ol class="breadcrumb mb-4"></ol>
-                   </div> -->
   
    <!-- Informes -->
           <div class="container-fluid px-4 {active === 9 ? 'active' : ''}" data-content id="informes">
